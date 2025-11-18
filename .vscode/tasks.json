@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build raylib",
+            "type": "shell",
+            "command": "C:/raylib/w64devkit/bin/gcc.exe",
+            "args": [
+                "main.c",
+                "-o",
+                "meu_jogo.exe",
+                "-I C:/raylib/w64devkit/include",
+                "-L C:/raylib/w64devkit/lib",
+                "-lraylib",
+                "-lopengl32",
+                "-lgdi32",
+                "-lwinmm",
+                "-static",
+                "-gdwarf-4"
+            ],
+            "options": {
+                "env": {
+                    "PATH": "C:/raylib/w64devkit/bin;${env:PATH}"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
